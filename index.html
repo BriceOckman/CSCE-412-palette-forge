@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Palette Forge — Harmonious Color Palettes</title>
+  <meta name="description" content="Palette Forge generates harmonious 5-color palettes. Lock colors, copy hex codes, and save palettes to your library.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <h1>Palette Forge</h1>
+    </div>
+    <p class="tagline">Forge harmonious 5-color palettes in a keystroke.</p>
+  </header>
+
+  <main>
+    <section class="palette-section" aria-label="Current palette">
+      <div class="swatches" id="swatches"></div>
+
+      <div class="controls">
+        <button class="btn btn-primary" id="regenBtn" type="button">
+          &#8635; Regenerate
+        </button>
+        <span class="kbd-hint" aria-hidden="true">
+          <kbd>Space</kbd> regenerates unlocked colors
+        </span>
+      </div>
+
+      <form class="save-row" id="saveForm">
+        <input
+          type="text"
+          id="paletteName"
+          maxlength="40"
+          placeholder="Name this palette…"
+          aria-label="Palette name"
+          autocomplete="off"
+        >
+        <button class="btn" id="saveBtn" type="submit">Save palette</button>
+      </form>
+    </section>
+
+    <section class="saved-section" aria-label="Saved palettes">
+      <h2>Saved palettes</h2>
+      <ul class="saved-list" id="savedList"></ul>
+      <p class="empty-note" id="emptyNote">No saved palettes yet — forge something you like and hit Save.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Palettes are generated with HSL color theory and saved locally in your browser.</p>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
